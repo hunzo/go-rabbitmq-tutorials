@@ -1,0 +1,13 @@
+version: '3.3'
+
+services: 
+  rabbitmq:
+    image: rabbitmq:3-management
+    # persist data set hostname
+    hostname: 'rabbit-srv' 
+    ports: 
+      - 5672:5672
+      - 15672:15672
+    restart: always
+    volumes: 
+      - ./data:/var/lib/rabbitmq/mnesia
